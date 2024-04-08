@@ -21,6 +21,7 @@ app.use(cors({
 })
 );
 
+console.log(process.env.FRONTEND_URL)
 // Using routes
 app.use( "/api/v1/users" ,userRouter);
 
