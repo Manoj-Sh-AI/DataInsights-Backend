@@ -6,10 +6,10 @@ export const sendCookie = async (user, res, message, statusCode = 200) => {
   return res
     .status(statusCode)
     .cookie("token", token, {
-      httpOnly: true,
       maxAge: 60 * 60 * 1000,
-      sameSite: process.env.NODE_ENV==="Development" ? "lax" : "none",
-      secure: process.env.NODE_ENV==="Development" ? false : true,
+      httpOnly: true,
+      sameSite: "none",
+      secure: true,
     })
     .json({
       success: true,
