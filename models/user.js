@@ -1,22 +1,22 @@
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
-    identification: {
+    Identification: {
         type: String,
         unique: true,
         required: true,
     },
-    email: {
+    Email: {
         type: String,
         required: true,
         unique: true,
     },
-    password: {
+    Password: {
         type: String,
         required: true,
         select: false,
     },
-    branch: {
+    Branch: {
         type: String,
         required: true,
     },

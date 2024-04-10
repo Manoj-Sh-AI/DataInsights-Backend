@@ -7,21 +7,17 @@ import cors from "cors";
 
 export const app = Express();
 
-config({
-    // path: "./data/config.env"
-})
+config()
 
 // using middleware
 app.use(Express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: [process.env.FRONTEND_URL],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: "http://localhost:5173",
     credentials: true,
 })
 );
 
-console.log(process.env.FRONTEND_URL)
 // Using routes
 app.use( "/api/v1/users" ,userRouter);
 
