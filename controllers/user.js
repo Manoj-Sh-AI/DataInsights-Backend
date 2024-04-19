@@ -50,7 +50,7 @@ export const getmyProfile = (req, res) => {
 export const logout = (req, res) => {
   res
     .status(200)
-    .cookie("token", "", {
+    .cookie("token", {
       expires: new Date(Date.now()),
       httpOnly: true,
       sameSite: "None",
@@ -58,6 +58,5 @@ export const logout = (req, res) => {
     })
     .json({
       success: true,
-      user: req.user,
     });
 };
